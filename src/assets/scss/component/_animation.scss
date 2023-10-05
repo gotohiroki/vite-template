@@ -1,0 +1,77 @@
+@use "../global/"as g;
+
+.js-textSplit {
+	opacity: 0;
+
+	.is-loaded & {
+		opacity: 1;
+	}
+}
+
+.word {
+	transform-origin: bottom;
+}
+
+.char {
+	overflow: hidden;
+	padding: 0 .3em;
+	margin: 0 -.3em;
+	display: inline-flex!important;
+}
+
+.char-inner {
+	display: inline;
+	will-change: transform, opacity;
+}
+
+.c-perspectiveEffect {
+	// perspective: 100px;
+	transition-duration: 0.4s;
+
+	& img {
+		transform-style: preserve-3d;
+		transition-duration: 0s;
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+}
+
+.js-lineAnim {
+	position: relative;
+
+	&::before {
+		content: '';
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba($color: #000000, $alpha: .15);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform .6s linear;
+		z-index: g.$z-line;
+	}
+
+	&.last:last-child {
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: rgba($color: #000000, $alpha: .15);
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform .6s linear;
+			z-index: g.$z-line;
+		}
+	}
+
+	&.is-show {
+		&::before,
+		&.last:last-child::after {
+			transform: scaleX(1);
+		}
+	}
+}

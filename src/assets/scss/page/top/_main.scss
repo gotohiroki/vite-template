@@ -1,0 +1,12 @@
+@use "../../global/" as g;
+
+.p-top-main {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100%;
+  clip-path: inset(0);
+  @include g.media(verticalPC) {
+    height: 60svh;
+  }
+}

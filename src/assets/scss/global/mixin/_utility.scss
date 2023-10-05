@@ -1,0 +1,8 @@
+@use "../setting"as s;
+@use "sass:math"; //math.divを使う上で必要
+
+@mixin center {
+  display: grid;
+  place-content: center;
+  place-items: center;
+}

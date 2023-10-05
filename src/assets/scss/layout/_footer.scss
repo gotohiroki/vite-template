@@ -1,0 +1,6 @@
+@use "../global/" as g;
+
+.l-footer {
+  position: relative;
+  background-color: g.$color-primary-bg;
+}

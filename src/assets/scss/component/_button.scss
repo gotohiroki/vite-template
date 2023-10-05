@@ -1,0 +1,75 @@
+@use "../global/"as g;
+
+.c-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: max-content;
+  gap: 0 .5rem;
+
+  @include g.media(pc) {
+    gap: 0 .8rem;
+  }
+
+  &._line {
+    padding-bottom: .5em;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      transform-origin: bottom left;
+      transform: scaleX(1);
+      // transition: transform .3s ease-in-out;
+      background-color: g.$color-primary-border;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    [class^=c-icon-] {
+      @include g.media(sp) {
+          margin-top: -0.1em;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        &::before {
+          animation: animLine .8s cubic-bezier(.22,1,.36,1);
+          // transform: scaleX(0);
+          // transform-origin: bottom right;
+        }
+      }
+    }
+
+  }
+}
+
+@keyframes animLine {
+  0% {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+  }
+  40% {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  60% {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.c-button-text {
+  @include g.copy-sunSerif;
+  font-size: 1.3rem;
+
+  @include g.media(pc) {
+    font-size: 1.7rem;
+  }
+}

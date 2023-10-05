@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    {{> head}}
+    <link rel="stylesheet" href="{{path}}assets/scss/style.scss" />
+  </head>
+
+  <body id="{{page}}">
+    <div class="l-wrapper">
+      {{> header}}
+
+      <main class="l-container">
+        <section class="p-about">
+          <h1>ABOUT</h1>
+        </section>
+      </main>
+
+      {{> footer}}
+    </div>
+
+    <script type="module" src="{{path}}assets/js/main.js"></script>
+  </body>
+</html>

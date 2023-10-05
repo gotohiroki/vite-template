@@ -1,0 +1,62 @@
+@use "../setting"as s;
+@use './responsive' as r;
+@use "sass:math"; //math.divを使う上で必要
+
+@mixin base-copy {
+  font-family: s.$font-base;
+  line-height: 1.9;
+  font-size: 1.4rem;
+  font-weight: s.$regular;
+  letter-spacing: 0;
+  font-feature-settings: unset;
+
+  @include r.media(pc) {
+    line-height: 2;
+    font-size: 1.7rem;
+  }
+}
+
+@mixin title-serif {
+  font-family: s.$font-title-serif;
+  letter-spacing: 0.06em;
+  font-feature-settings: 'palt';
+  & .en {
+    font-size: 106%;
+    vertical-align: -0.02em;
+  }
+}
+
+@mixin copy-serif {
+  font-family: s.$font-copy-serif;
+  letter-spacing: 0;
+  font-feature-settings: 'palt';
+}
+
+@mixin copy-sunSerif {
+  font-family: s.$font-title-sunserif;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  font-feature-settings: 'palt';
+  font-weight: s.$bold;
+}
+
+@mixin brackets-copy {
+  @include copy-sunSerif;
+  font-size: 1.5rem;
+  margin-left: -0.2em;
+
+  @include r.media(sp) {
+    font-size: 1.2rem;
+
+  }
+}
+// @mixin mixedEn {
+//   font-size: 107%;
+//   vertical-align: -0.02em;
+// }
+@mixin justify {
+  line-break: strict;
+  text-align: justify;
+  word-break: break-all;
+  hyphens: auto;
+}

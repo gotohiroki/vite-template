@@ -1,0 +1,11 @@
+@use "../global/"as g;
+
+.l-wrapper,
+.l-container {
+  position: relative;
+}
+
+.l-wrapper {
+  background-color: g.$color-primary-bg;
+  transition: background-color .4s ease-out 0s, color .4s ease-out 0s;
+}

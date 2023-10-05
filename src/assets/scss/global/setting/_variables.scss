@@ -1,0 +1,50 @@
+@use "../mixin/browser" as m;
+
+// フォントファミリー
+$font-base: YakuHanMPs,'Yu Mincho Pr6N M', "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+$font-title-serif: "linotype-sabon", 'Yu Mincho 5go Kana D', 'Yu Mincho Pr6N D', serif;
+$font-copy-serif: "Yu Mincho 5go Kana M", 'Yu Mincho Pr6N M',  serif;
+$font-title-sunserif: "Futo Go B101 JIS2004 AP", sans-serif;
+
+
+// フォントウェイト
+$thin: 100;
+$extralight: 200;
+$regular: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+// カラー
+$color-primary-text: #222;
+$color-secondary-text: #fff;
+$color-accent-text: #B91F1F;
+
+$color-primary-bg: #FFFFFF;
+$color-gray-bg: #ABB3BD;
+$color-black-bg: #111;
+
+$color-primary-border: #555;
+$color-secondary-border: rgba(85, 85, 85, 0.15);
+$color-nega-border: rgba(255, 255, 255, 0.8);
+$color-gray-black: #444;
+
+// z-index
+$z-loading: 9999;
+$z-closemodal: 6000;
+$z-menuTrigger: 5000;
+$z-modal: 3000;
+$z-pageTitle: 1000;
+$z-navSP: 200;
+$z-header: 120;
+$z-navPC: 100;
+$z-line: 20;
+$z-icon: 10;
+$z-page: 1;
+// $z-frameIn: -1;
+$z-bg: -10;
+
+// イージング
+$primary-easing :cubic-bezier(.4,0,.2,1) 0s;
+$opacity-easing : opacity .6s cubic-bezier(.18,.06,.23,1) .8s;
